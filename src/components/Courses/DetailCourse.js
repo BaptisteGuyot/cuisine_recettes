@@ -9,7 +9,6 @@ const DetailCourse = ({id}) => {
     const [recettes, setRecettes] = useState([])
     const [toutesRecettes, setToutesRecettes] = useState([])
     const [viewIngredients, setViewIngredients] = useState(<></>)
-    const [firstRender, setFirstRender] = useState(true)
     const [editName, setEditName] = useState(false)
     useEffect(() => {
         getListeById(id).then(course => {
@@ -27,9 +26,6 @@ const DetailCourse = ({id}) => {
     }, [id]);
 
     useEffect(() => {
-        if (firstRender) {
-            setFirstRender(false)
-        } else {
             // Sauvegarder a chaque modification des recettes
             let newCourse ={
                 nom: nom,
@@ -61,9 +57,9 @@ const DetailCourse = ({id}) => {
                 setViewIngredients(<em className="flow-text"> Cette liste de courses est vide, ajoutez des recettes pour
                     l'alimenter</em>)
             }
-        }
 
-    }, [recettes, editName])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [recettes, editName]);
     return (<div className={"container"}>
         <h3 className={"center"}>{editName ? <input value={nom} onChange={(event) => setNom(event.target.value)} />: nom }
             <a href={"#!"} onClick={() => setEditName(!editName)} className="white waves-effect"><i className="material-icons  teal-text">edit</i></a>

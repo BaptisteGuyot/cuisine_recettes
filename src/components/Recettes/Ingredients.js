@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import M from "materialize-css";
 import { Chip } from "react-materialize";
 import { getIngredients, createIngredient } from "../../api/ApiRecettes"
 
@@ -9,17 +8,19 @@ const Ingredients = ({ value = [], onChange }) => {
         getIngredients().then(res => {
             console.log(res);
             let tmpAutoComp = autoComp;
-            res.map((val, index) => {
+            res.forEach((val) => {
                 tmpAutoComp[val.name]=null;
             })
             setAutoComp(tmpAutoComp)
         });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [setAutoComp])
 
     return (
         <Chip
             options={{
-                data: value.map((str, index) => {
+                data: value.map((str) => {
                     return { tag: str.name };
                 }),
                 placeholder: "Ingrédients",
@@ -30,7 +31,7 @@ const Ingredients = ({ value = [], onChange }) => {
                     minLength: 1
                 },
                 limit: 100,
-                onChipAdd: function(event, chip) {
+                onChipAdd: function(event) {
                     console.log(event[0].M_Chips.chipsData);
                     let autocompkey = Object.keys(autoComp)
                     let toAdd = []
@@ -39,6 +40,7 @@ const Ingredients = ({ value = [], onChange }) => {
                             createIngredient({name:val.tag})
                         }
                         toAdd.push(val)
+                        return 0
                     })
                     console.log(toAdd)
                     onChange(toAdd);

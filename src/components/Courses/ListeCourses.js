@@ -4,7 +4,6 @@ import {
     createListe
 } from "../../api/ApiRecettes";
 import {Modal, Button} from "react-materialize";
-import M from "materialize-css";
 import Course from "./Course";
 
 const ListeCourses = () => {
@@ -29,9 +28,8 @@ const ListeCourses = () => {
 
     useEffect(() => { // Au demarrage et a chaque ajout/Suppression de liste
         if (listes.length) {
-            let lignesList = [];
-            lignesList = listes.map((liste, index) => (
-                <Course index={index} liste={liste} update={update}/>
+            let lignesList = listes.map((liste, index) => (
+                <Course key={index} liste={liste} update={update}/>
             ));
             setViewForListes(lignesList);
         } else {

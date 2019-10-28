@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "@reach/router";
+import { Link } from "@reach/router";
 import { deleteRecette } from "../../api/ApiRecettes";
 const Recette = ({ id, titre, description, note, handleDelete }) => {
     return (

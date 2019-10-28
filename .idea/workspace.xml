@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97da2ba3-ac7e-4f38-ab69-b11073c62605" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ora56.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Courses/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recettes/Recette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/Recette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Shared/Ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/Ingredients.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,14 +40,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Recettes" />
       <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Shared" />
       <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Courses" />
-      <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Recettes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -78,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572266835111</updated>
-      <workItem from="1572266842568" duration="12902000" />
+      <workItem from="1572266842568" duration="13996000" />
     </task>
     <servers />
   </component>

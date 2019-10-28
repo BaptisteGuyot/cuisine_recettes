@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import M from "materialize-css";
 import { navigate } from "@reach/router"
-import Ingredients from "../Shared/Ingredients";
+import Ingredients from "./Ingredients";
 import { getRecettesById, saveRecipe, addRecipe } from "../../api/ApiRecettes";
 import { Modal } from "react-materialize";
 
@@ -43,10 +43,11 @@ const DetailRecette = ({ id }) => {
                         console.log(newIngrs);
                         let ingrs = newIngrs.map((a, index) => {
                             let tmpQte = 1;
-                            ingredients.map((ing, index) => { // Permet de récupérer la quantité (on ne peut pas la transmettre a cause des chips materialize)
+                            ingredients.map((ing) => { // Permet de récupérer la quantité (on ne peut pas la transmettre a cause des chips materialize)
                                 if(ing.name === a.tag){
                                     tmpQte = ing.qte;
                                 }
+                                return 0
                             })
 
                             return { name: a.tag, id: index, qte: tmpQte };

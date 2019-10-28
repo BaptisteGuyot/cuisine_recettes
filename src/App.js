@@ -1,4 +1,4 @@
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import React from "react";
 import Home from "./components/Home";
 import DetailRecette from "./components/Recettes/DetailRecette";
