@@ -79,7 +79,9 @@ const DetailCourse = ({id}) => {
                             <a
                                 href="#!"
                                 onClick={() => {
-                                    setRecettes(recettes.filter(rec => rec.id !== recette.id))
+                                    let tmp = recettes
+                                    tmp.splice(index,1)
+                                    setRecettes([...tmp]) // Spread operator pour bien tout mettre a jour
                                 }}
                                 className="material-icons white red-text right"
                             >remove</a>
