@@ -4,15 +4,22 @@ import {Dropdown} from "react-materialize"
 import M from "materialize-css"
 
 const DetailCourse = ({id}) => {
+    const [oldCourse, setOldCourse] = useState({})
     const [nom, setNom] = useState(id);
     const [recettes, setRecettes] = useState([])
     const [toutesRecettes, setToutesRecettes] = useState([])
     const [viewIngredients, setViewIngredients] = useState(<></>)
     const [firstRender, setFirstRender] = useState(true)
+    const [editName, setEditName] = useState(false)
     useEffect(() => {
         getListeById(id).then(course => {
+            console.log(course)
             setNom(course.nom);
             setRecettes(course.recettes)
+            setOldCourse({
+                nom: course.nom,
+                recettes: course.recettes
+            })
         })
         getRecettes().then(res => {
             setToutesRecettes(res);
@@ -24,10 +31,18 @@ const DetailCourse = ({id}) => {
             setFirstRender(false)
         } else {
             // Sauvegarder a chaque modification des recettes
-            saveListe(id, {
+            let newCourse ={
                 nom: nom,
                 recettes: recettes
-            }).then(() => M.toast({html: "Modifications sauvegardées"}))
+            }
+            if(newCourse.nom !== oldCourse.nom || newCourse.recettes !== oldCourse.recettes) // Si la liste a changé de par son nom ou ses recettes
+                saveListe(id, {
+                    nom: nom,
+                    recettes: recettes
+                }).then(() => {
+                    setOldCourse(newCourse)
+                    M.toast({html: "Modifications sauvegardées"})
+                })
 
             if (recettes.length) {
                 let ingredients = [];
@@ -48,9 +63,11 @@ const DetailCourse = ({id}) => {
             }
         }
 
-    }, [recettes])
+    }, [recettes, editName])
     return (<div className={"container"}>
-        <h3 className={"center"}>{nom}</h3>
+        <h3 className={"center"}>{editName ? <input value={nom} onChange={(event) => setNom(event.target.value)} />: nom }
+            <a href={"#!"} onClick={() => setEditName(!editName)} className="white waves-effect"><i className="material-icons  teal-text">edit</i></a>
+        </h3>
         <div className="row">
             <div className="col m5 s12">
                 <h4 className={"center"}>Recettes</h4>
@@ -81,7 +98,7 @@ const DetailCourse = ({id}) => {
                 </div>
             </div>
             <div className="col m5 offset-m2 s12">
-                <h4 className={"center"}>Ingrédients</h4>
+                <h4 className={"center"}>Ingrédients requis</h4>
                 <ul className="collection">
                     {viewIngredients}
                 </ul>
