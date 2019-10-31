@@ -39,8 +39,7 @@ const DetailCourse = ({id}) => {
                 recettes: recettes
             }
             if(newCourse.nom !== oldCourse.nom || newCourse.recettes !== oldCourse.recettes) // Si la liste a changé de par son nom ou ses recettes
-                console.log(oldCourse)
-                console.log(newCourse)
+
                 saveListe(id, {
                     nom: nom,
                     recettes: recettes
@@ -48,7 +47,7 @@ const DetailCourse = ({id}) => {
                     setOldCourse(newCourse)
                     M.toast({html: "Modifications sauvegardées", displayLength: 1000})
                 })
-
+            console.log(recettes)
             if (recettes.length) {
                 let ingredients = [];
                 recettes.forEach((recette) => {
@@ -68,7 +67,7 @@ const DetailCourse = ({id}) => {
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [recettes, editName]);
+    }, [recettes, editName, received]);
     return (<div className={"container"}>
         <h3 className={"center"}>{editName ? <input value={nom} onChange={(event) => setNom(event.target.value)} />: nom }
             <a href={"#!"} onClick={() => setEditName(!editName)} className="white waves-effect"><i className="material-icons  teal-text">edit</i></a>

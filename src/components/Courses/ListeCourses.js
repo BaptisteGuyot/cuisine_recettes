@@ -21,6 +21,7 @@ const ListeCourses = () => {
 
     const update = () => {
         console.log("update")
+        setReceived(false)
         getListes().then(res => {
             console.log(res)
             setReceived(true)

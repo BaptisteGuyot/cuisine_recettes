@@ -73,7 +73,7 @@ const DetailRecette = ({ id }) => {
                                         if (current.name === val.name) {
                                             return {
                                                 name: current.name,
-                                                qte: event.target.value
+                                                qte: parseInt(event.target.value)
                                             };
                                         } else {
                                             return current;
