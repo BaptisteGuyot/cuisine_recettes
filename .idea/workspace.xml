@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97da2ba3-ac7e-4f38-ab69-b11073c62605" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Refrigerecette/InfoRecette.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Refrigerecette/Refrigerecette.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ApiRecettes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ApiRecettes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Recettes/ListeRecettes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/ListeRecettes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572266835111</updated>
       <workItem from="1572266842568" duration="14434000" />
-      <workItem from="1572505861709" duration="2774000" />
+      <workItem from="1572505861709" duration="12001000" />
     </task>
     <servers />
   </component>

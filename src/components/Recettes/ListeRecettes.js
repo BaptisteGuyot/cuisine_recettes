@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Recette from "./Recette";
 import { getRecettes } from "../../api/ApiRecettes";
+import {Link} from "@reach/router";
 
 const ListeRecettes = () => {
     const [recettes, setRecettes] = useState([]);
@@ -33,6 +34,16 @@ const ListeRecettes = () => {
         }
     }, [recettes, setResult]);
 
-    return <ul className="collection">{result}</ul>;
+    return (
+        <div className="container">
+            <ul className="collection">{result}</ul>
+            <Link to={`/recette/new`} className="title">
+                <i className=" material-icons medium circle green white-text right">
+                    add
+                </i>
+            </Link>
+        </div>
+        );
 };
 export default ListeRecettes;
+

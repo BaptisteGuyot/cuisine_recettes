@@ -1,4 +1,4 @@
-const url = "https://react-19-20.cleverapps.io/e175938m";
+const url = "https://react-19-20.cleverapps.io/bguyot";
 export const getRecettes = () => {
     return fetch(`${url}/recettes`, {
         method: "get"

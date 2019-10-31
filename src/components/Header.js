@@ -12,6 +12,9 @@ const AppHeader = () => {
                     <li>
                         <Link to={"/courses"}>Liste de courses</Link>
                     </li>
+                    <li>
+                        <Link to={"/refrigerecette"}>Refrigerecette</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
