@@ -5,6 +5,7 @@ import {
 } from "../../api/ApiRecettes";
 import {Modal, Button} from "react-materialize";
 import Course from "./Course";
+import Loader from "../Loader";
 
 const ListeCourses = () => {
     /*
@@ -16,11 +17,13 @@ const ListeCourses = () => {
     const [newListName, setNewListName] = useState("");
     const [listes, setListes] = useState([]);
     const [viewForListes, setViewForListes] = useState([]);
+    const [received, setReceived] = useState(false)
 
     const update = () => {
         console.log("update")
         getListes().then(res => {
             console.log(res)
+            setReceived(true)
             if (res.length)
                 setListes(res)
         });
@@ -42,18 +45,24 @@ const ListeCourses = () => {
             <div className="row">
                 <div className="col s12">
                     <h4>Listes de courses</h4>
-                    <ul className="collection">{viewForListes}</ul>
+                    {
+                        received ?
+                            <ul className="collection">{viewForListes}</ul>
+                            :
+                            <div className={"center"}>
+                                <Loader/>
+                            </div>
+                    }
                 </div>
             </div>
-
             <div className="row">
                 <Modal // continuer la modale avec le parametre actions pour ajouter la nouvelle liste a la base
                     header="Nouvelle liste de courses"
                     fixedFooter
                     trigger={
                         <span className="waves-effect waves-light btn col s12">
-              Nouvelle liste
-            </span>
+                            Nouvelle liste
+                        </span>
                     }
                     actions={
                         <Button

@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97da2ba3-ac7e-4f38-ab69-b11073c62605" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ora56.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Courses/Course.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/Course.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/DetailCourse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Courses/ListeCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/DetailRecette.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Recettes/Recette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/Recette.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Shared/Ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Recettes/Ingredients.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +23,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1SxWhOJfB21dlvQhvUWOBzYnV43" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -44,6 +39,9 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Recettes" />
       <recent name="E:\Bureau\ProgrammationWebCoteClient\cuisinerecettes\src\components\Shared" />
@@ -87,7 +85,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572266835111</updated>
-      <workItem from="1572266842568" duration="13996000" />
+      <workItem from="1572266842568" duration="14434000" />
+      <workItem from="1572505861709" duration="2056000" />
     </task>
     <servers />
   </component>
@@ -99,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
