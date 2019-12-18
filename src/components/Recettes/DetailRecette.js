@@ -20,7 +20,6 @@ const DetailRecette = ({ id }) => {
             if (id !== "new") {
                 getRecettesById(id).then(res => {
                     setRecette(res);
-                    console.log(res);
                     setDescription(res["description"]);
                     setTitle(res["name"]);
                     setNote(res["note"]);
@@ -35,12 +34,10 @@ const DetailRecette = ({ id }) => {
 
     useEffect(() => {
         if (ingredients) {
-            console.log(ingredients)
             setChip(
                 <Ingredients
                     value={recette.ingredients}
                     onChange={newIngrs => {
-                        console.log(newIngrs);
                         let ingrs = newIngrs.map((a, index) => {
                             let tmpQte = 1;
                             ingredients.map((ing) => { // Permet de récupérer la quantité (on ne peut pas la transmettre a cause des chips materialize)

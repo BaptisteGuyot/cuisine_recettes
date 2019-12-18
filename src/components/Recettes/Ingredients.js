@@ -6,7 +6,6 @@ const Ingredients = ({ value = [], onChange }) => {
     const [autoComp, setAutoComp] = useState({})
     useEffect(() => {
         getIngredients().then(res => {
-            console.log(res);
             let tmpAutoComp = autoComp;
             res.forEach((val) => {
                 tmpAutoComp[val.name]=null;
@@ -32,7 +31,6 @@ const Ingredients = ({ value = [], onChange }) => {
                 },
                 limit: 100,
                 onChipAdd: function(event) {
-                    console.log(event[0].M_Chips.chipsData);
                     let autocompkey = Object.keys(autoComp)
                     let toAdd = []
                     event[0].M_Chips.chipsData.map((val, index) => {
@@ -42,7 +40,6 @@ const Ingredients = ({ value = [], onChange }) => {
                         toAdd.push(val)
                         return 0
                     })
-                    console.log(toAdd)
                     onChange(toAdd);
                 },
                 onChipDelete: function(event, chip) {

@@ -14,7 +14,6 @@ const DetailCourse = ({id}) => {
     const [editName, setEditName] = useState(false)
     useEffect(() => {
         getListeById(id).then(course => {
-            console.log(course)
             setNom(course.nom);
             setRecettes(course.recettes)
             setOldCourse({
@@ -30,6 +29,8 @@ const DetailCourse = ({id}) => {
     useEffect(() => {
         if(nom!==id && recettes && oldCourse.nom && oldCourse.recettes)
             setReceived(true)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[nom, recettes, oldCourse])
     useEffect(() => {
             // Sauvegarder a chaque modification des recettes
@@ -47,7 +48,6 @@ const DetailCourse = ({id}) => {
                     setOldCourse(newCourse)
                     M.toast({html: "Modifications sauvegardées", displayLength: 1000})
                 })
-            console.log(recettes)
             if (recettes.length) {
                 let ingredients = [];
                 recettes.forEach((recette) => {
@@ -55,7 +55,6 @@ const DetailCourse = ({id}) => {
                         ingredients[ingredient.name] = (isNaN(ingredient.qte + ingredients[ingredient.name]) ? ingredient.qte : ingredient.qte + ingredients[ingredient.name]);
                     })
                 })
-                console.log(ingredients)
                 setViewIngredients(Object.keys(ingredients).map((ingredient, index) => {
                     return <li key={index} className="collection-item">
                         {ingredient}<span className="badge teal-text">{ingredients[ingredient]}</span>
@@ -118,6 +117,11 @@ const DetailCourse = ({id}) => {
                     <Loader/>
                 </div>
         }
+        <div className="row">
+            <div className="col s12 center italic">
+                <span className="center flow-text">Ajoutez des recettes afin d'obtenir la liste des ingrédients nécessaires. Si vous souhaitez réaliser plusieurs fois la même recette, il suffit de l'ajouter plusieurs fois</span>
+            </div>
+        </div>
     </div>)
 }
 export default DetailCourse

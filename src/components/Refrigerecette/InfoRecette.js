@@ -1,6 +1,4 @@
 import React from "react"
-import Ingredients from "../Recettes/Ingredients";
-
 const InfoRecette = ({recette}) => {
     return(<div>
             <p>{recette.description}</p>

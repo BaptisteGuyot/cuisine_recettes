@@ -20,10 +20,8 @@ const ListeCourses = () => {
     const [received, setReceived] = useState(false)
 
     const update = () => {
-        console.log("update")
         setReceived(false)
         getListes().then(res => {
-            console.log(res)
             setReceived(true)
             if (res.length)
                 setListes(res)
@@ -70,7 +68,6 @@ const ListeCourses = () => {
                             modal="close"
                             className="waves-effect waves-light btn"
                             onClick={() => {
-                                console.log(newListName);
                                 createListe({
                                     nom: newListName,
                                     recettes: []

@@ -1,29 +1,21 @@
 import React, {useState, useEffect} from "react"
-import {addRecipe, getIngredients, getRecettes, saveRecipe} from "../../api/ApiRecettes";
+import {getIngredients, getRecettes} from "../../api/ApiRecettes";
 import {Dropdown, Modal} from "react-materialize";
-import M from "materialize-css";
-import {navigate} from "@reach/router";
 import InfoRecette from "./InfoRecette";
+import Loader from "../Loader";
 
 const Refrigerecette = () => {
     const [ingredients, setIngredients] = useState([])
     const [selectedIngredients, setSelectedIngredients] = useState([])
     const [recettes, setRecettes] = useState([])
-    const [oneAtLeast, setOneAtLeast] = useState(false)
     useEffect(() => {
         getIngredients().then((res) => {
             setIngredients(res)
-            console.log(res)
         })
         getRecettes().then((res) => {
             setRecettes(res)
-            console.log(res)
         })
     }, [setIngredients])
-
-    useEffect(() => {
-
-    }, [selectedIngredients])
 
     return (<div className="container">
         <div className="row">
@@ -48,7 +40,7 @@ const Refrigerecette = () => {
                                         className="validate"
                                         onChange={event => {
                                             if (event.target.value > 0) {
-                                                let newIngrList = selectedIngredients.map((current, index) => {
+                                                let newIngrList = selectedIngredients.map((current) => {
                                                     if (current.name === selectedIngredient.name) {
                                                         return {
                                                             name: current.name,
@@ -82,7 +74,7 @@ const Refrigerecette = () => {
                 </ul>
                 <div className="center">
                     <Dropdown trigger={<span
-                        className={"btn waves-effect waves-light " + (!selectedIngredients.length ? "pulse" : "")}>Ajouter un ingrédient <i
+                        className={"btn waves-effect waves-light " + (!selectedIngredients.length ? "pulse" : "")}>{ingredients.length ? "Ajouter un ingrédient" : <Loader/>} <i
                         className="material-icons">arrow_drop_down</i></span>}>
                         {ingredients.map((ingr, index) => <span key={ingr.id}
                                                                 onClick={() => {
@@ -101,12 +93,12 @@ const Refrigerecette = () => {
                 <h4>Recettes possibles</h4>
                 <ul className="collection">
                     {recettes.map((recette, index) => canDoRecipe(recette, selectedIngredients) ?
-                        <li className="collection-item">
+                        <li className="collection-item" key={index} >
                             {recette.name}
                             <Modal
                                 header={recette.name}
                                 trigger={
-                                    <span className="waves-effect waves-light btn right">
+                                    <span className=" waves-effect right teal-text">
                                         Infos
                                     </span>
                                 }
@@ -122,7 +114,11 @@ const Refrigerecette = () => {
 
             </div>
         </div>
-
+        <div className="row">
+            <div className="col s12 center italic">
+                <span className="flow-text">Indiquez les ingrédients que vous possédez pour voir les recettes réalisables.</span>
+            </div>
+        </div>
     </div>)
 }
 
@@ -131,7 +127,7 @@ const canDoRecipe = (recette, ingredientsPossedes) => {
     let nbIngrValides = 0
     recette.ingredients.forEach(ingredientNecessaire => {
         ingredientsPossedes.forEach(ingredientPossede => {
-            if (ingredientNecessaire.id === ingredientPossede.id && ingredientPossede.qte >= ingredientNecessaire.qte)
+            if (ingredientNecessaire.name === ingredientPossede.name && ingredientPossede.qte >= ingredientNecessaire.qte)
                 nbIngrValides++;
         })
     })

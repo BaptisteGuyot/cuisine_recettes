@@ -28,7 +28,6 @@ export const addRecipe = recette => {
     });
 };
 export const deleteRecette = id => {
-    console.log("suppression de recette");
     return fetch(`${url}/recettes/${id}`, {
         method: "delete"
     }).then(res => res.json());
@@ -67,7 +66,6 @@ export const getListeById = (id) => {
     }).then(res => res.json());
 }
 export const deleteListe = (id) => {
-    console.log("suppression de recette");
     return fetch(`${url}/listes/${id}`, {
         method: "delete"
     }).then(res => res.json())
